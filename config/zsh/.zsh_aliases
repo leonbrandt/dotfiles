@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ALIASES_DIRECTORY="${ALIASES_DIRECTORY:-.aliases/}"
+
+pushd $ALIASES_DIRECTORY > /dev/null
+for alias_file in *; do
+	. $alias_file
+done
+popd > /dev/null

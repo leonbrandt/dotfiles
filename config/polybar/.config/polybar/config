@@ -1,0 +1,252 @@
+[bar/default]
+width = 100%
+height = 24
+radius = 0
+fixed-center = false
+
+#background = #000000
+background = #222229
+foreground = #FFFFFF
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Open+Sans:size=8;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=8;1"
+font-2 = "Font Awesome 5 Brands:size=8;1"
+
+modules-left = i3 title
+modules-center = date
+modules-right = cpu memory filesystem wlan eth battery backlight powermenu
+
+tray-position =
+;tray-padding =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+#label-mode-foreground = #000000
+label-mode-foreground = #222229
+label-mode-background = #FDE15A
+
+label-focused = %index%
+label-focused-background = #1F7FFF
+label-focused-foreground = #FFFFFF
+label-focused-padding = 2
+
+label-unfocused = %index%
+#label-unfocused-background = #000000
+label-unfocused-background = #22229
+label-unfocused-foreground = #FFFFFF
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = #cbd1cd
+label-visible-foreground = #1e1e20
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #FDE15A
+label-urgent-padding = 2
+
+[module/wireless-network]
+type = internal/network
+interface = wlp5s0
+interval = 1
+
+format-connected = <label-connected>
+format-connected-foreground = #FFFFFF
+#format-connected-background = #000000
+format-connected-padding = 2
+format-connected-prefix = " "
+label-connected = ↓ %downspeed% ↑ %upspeed%
+
+format-disconnected = "  ×"
+
+[module/eth]
+type = internal/network
+interface = enp6s0
+interval = 1
+
+format-connected = <label-connected>
+format-connected-foreground = #FFFFFF
+#format-connected-background = #000000
+format-connected-padding = 2
+format-connected-prefix = " "
+label-connected = ↓ %downspeed% ↑ %upspeed%
+
+format-disconnected = "  ×"
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+date-alt = " %d.%m.%Y (%A) - KW %V"
+
+time = %H:%M:%S
+time-alt = %H:%M:%S
+
+;format-prefix = 
+format-foreground = #FFFFFF
+#format-background = #000000
+format-padding = 2
+
+label = %time% %date%
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU %percentage%%
+
+ramp-coreload-spacing = 1
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+[module/memory]
+type = internal/memory
+interval = 0.5
+format = <label> <ramp-used>
+;label = RAM %gb_used% / %gb_free%
+label = RAM %percentage_used%%
+
+; <bar-used>
+bar-used-indicator =
+bar-used-width = 10
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+
+ramp-used-0 = ▁
+ramp-used-1 = ▂
+ramp-used-2 = ▃
+ramp-used-3 = ▄
+ramp-used-4 = ▅
+ramp-used-5 = ▆
+ramp-used-6 = ▇
+ramp-used-7 = █
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 1
+hwmon-path = /sys/devices/virtual/thermal/thermal_zone1/hwmon1/temp1_input
+warn-temperature = 60
+units = true
+format = <label> <ramp>
+format-warn = <label-warn> <ramp>
+label = TEMP %temperature-c%
+label-warn = TEMP %temperature-c%
+label-warn-foreground = #FF0000
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = #FFFFFF
+label-close = × cancel
+label-close-foreground = #FF0000
+label-separator = |
+label-separator-foreground = #FFFFFF
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = pkill -KILL -u $USER
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[module/battery]
+type = internal/battery
+full-at = 95
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+poll-interval = 1
+
+format-charging = ⚡ <label-charging>
+format-discharging = ⚡ <label-discharging>
+format-full = ⚡ <label-full>
+
+label-charging = ↑ %percentage%% | %time% | %consumption% W
+label-discharging = ↓ %percentage%% | %time% | %consumption% W
+label-full = F | %consumption% W
+
+label-full-foreground = #FDE15A
+
+[module/title]
+type = internal/xwindow
+format = <label>
+#format-background = #000000
+format-foreground = #FFFFFF
+format-padding = 4
+label = %title%
+label-maxlen = 50
+label-empty = Empty
+label-empty-foreground = #707070
+
+[module/backlight]
+type = internal/xbacklight
+format = <label>
+label = %percentage%%
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /mnt/master
+mount-1 = /mnt/slave
+interval = 3
+label-mounted = %used% (%percentage_used%%)
+label-unmounted = x
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0

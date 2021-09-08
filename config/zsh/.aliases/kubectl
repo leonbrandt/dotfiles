@@ -1,0 +1,62 @@
+compdef kubecolor='kubectl'
+alias kubectl='kubecolor'
+alias k='kubectl'
+alias kl='kubectl logs'
+alias klf='kubectl logs -f'
+alias kg='kubectl get'
+function kgw() {
+	O=$1
+	T=${2:-1};
+	watch -n $T kubecolor get $O;
+}
+alias kga='kubectl get all'
+function kgaw() {
+	T=${1:-1};
+	watch -n $T kubecolor get all;
+}
+alias kge='kubectl get event'
+alias kget='kubectl get event --sort-by='.lastTimestamp''
+function kgetw() {
+	T=${1:-1};
+	watch -n $T kubecolor get event --sort-by='.lastTimestamp';
+}
+alias kgn='kubectl get node'
+function kgnw() {
+	T=${1:-1};
+	watch -n $T kubecolor get node;
+}
+alias kgns='kubectl get namespace'
+alias kgp='kubectl get pod'
+function kgpw() {
+	T=${1:-1};
+	watch -n $T kubecolor get pod;
+}
+alias kgpn='kubectl get pods -o wide --sort-by="{.spec.nodeName}"'
+function kgpnw() {
+	T=${1:-1};
+	watch -n $T kubecolor get pods -o wide --sort-by="{.spec.nodeName}";
+}
+alias kgs='kubectl get service'
+function kgsw() {
+	T=${1:-1};
+	watch -n $T kubecolor get service;
+}
+alias kgd='kubectl get deployment'
+function kgdw() {
+	T=${1:-1};
+	watch -n $T kubecolor get deployment;
+}
+alias kgi='kubectl get ingress'
+alias kd='kubectl describe'
+alias kdn='kubectl describe node'
+alias kdns='kubectl describe namespace'
+alias kdp='kubectl describe pod'
+alias kds='kubectl describe service'
+alias kdg='kubectl describe deployment'
+alias kdi='kubectl describe ingress'
+alias kr='kubectl rollout'
+alias krr='kubectl rollout restart'
+function kshell() {
+	kubectl exec --stdin --tty $1 -- /bin/bash
+}
+# alias kgpf='kubectl get service -o json | jq '.items[] | {name:.metadata.name, p:.spec.ports[] } | select( .p.nodePort != null ) | "\(.name): localhost:\(.p.nodePort) -> \(.p.port) -> \(.p.targetPort)"''

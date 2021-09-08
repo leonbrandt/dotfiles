@@ -1,0 +1,8 @@
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add .'
+alias grs='git restore --staged'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline'

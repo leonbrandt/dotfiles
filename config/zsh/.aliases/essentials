@@ -1,0 +1,37 @@
+alias ll='ls -la'
+alias lg='ls -la | grep -iF'
+alias lt='ls -latr'
+
+function cl() {
+	clear;
+	cd $1;
+	ll;
+}
+
+alias dirsize='du -sh .'
+alias longdirsize='du -lh .'
+alias ds='dirsize'
+alias lds='longdirsize'
+
+alias eg='env | grep -iF'
+alias pg='pacman -Q | grep -iF'
+alias hg='history | grep -iF'
+
+alias ytdl='youtube-dl'
+alias ytdlmp3='youtube-dl --prefer-ffmpeg --extract-audio --audio-format mp3'
+
+alias t='tungsten'
+alias wolframalpha='tungsten'
+alias wa='tungsten'
+
+alias disk='lsblk -o NAME,LABEL,STATE,SIZE,FSUSED,FSUSE%,FSTYPE,MOUNTPOINT,MODEL'
+
+alias cal='cal -m'
+alias week='date +%V'
+alias day='echo $(date +%u) $(date +%A)'
+
+function explain() {
+	type $1;
+	which $1;
+	command -v $1;
+}

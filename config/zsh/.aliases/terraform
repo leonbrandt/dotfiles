@@ -1,0 +1,15 @@
+alias t='terraform'
+alias tfv='terraform fmt && terraform validate'
+alias ti='terraform init'
+alias tp='terraform plan'
+alias ta='terraform apply'
+alias td='terraform destroy'
+function tpt() {
+	terraform plan -target=$1;
+}
+function tat() {
+	terraform apply -target=$1;
+}
+function tdt() {
+	terraform destroy -target=$1;
+}

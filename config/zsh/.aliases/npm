@@ -1,0 +1,10 @@
+alias npmis='npm i -S'
+alias npmid='npm i -D'
+alias npmig='npm i -g'
+function npmit() {
+	npm i -S $1;
+	npm i -D @types/$1;
+}
+alias npmbs='npm run build && npm run start'
+alias npmb='npm run build'
+alias npms='npm run start'

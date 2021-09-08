@@ -1,0 +1,22 @@
+alias d='docker'
+alias db='docker build'
+alias dps='docker ps'
+function dpsw() {
+	T=${1:-1};
+	watch -n $T docker ps;
+}
+alias dpsa='docker ps --all'
+alias dclean='docker stop $(docker ps -aq)'
+
+alias di='docker image'
+alias dse='docker service'
+alias dst='docker stack'
+alias dn='docker network'
+alias dv='docker volume'
+
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcud='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dcb='docker-compose build'
+alias dcl='docker-compose logs -f'
