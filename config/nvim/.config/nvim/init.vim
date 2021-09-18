@@ -114,7 +114,10 @@ nmap <C-k> {
 nmap <C-j> }
 " write shada-file (deleting markers)
 nmap <Leader>s :wshada!<CR>
-
+nmap <Leader>2 :set ts=2<CR>
+nmap <Leader>4 :set ts=4<CR>
+nmap <Leader>r :%retab!<CR>
+nmap <Leader>" :%s/'/"/g<CR>
 " vim-signature
 " jump to start of next line containing a mark
 nmap <Leader>M ]'
