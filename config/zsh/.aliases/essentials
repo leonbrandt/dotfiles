@@ -13,6 +13,9 @@ alias longdirsize='du -lh .'
 alias ds='dirsize'
 alias lds='longdirsize'
 
+alias duplicate='export INIT_DIR=$(pwd) && hyper'
+alias dup='duplicate'
+
 alias eg='env | grep -iF'
 alias pg='pacman -Q | grep -iF'
 alias hg='history | grep -iF'
