@@ -11,3 +11,8 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 unsetopt nomatch # https://github.com/hashicorp/terraform/issues/21271#issuecomment-491424517
+
+if [[ -v INIT_DIR ]]; then
+	cd $INIT_DIR
+	unset INIT_DIR
+fi
