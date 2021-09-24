@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'wellle/targets.vim'
 Plug 'lambdalisue/suda.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'benknoble/vim-auto-origami'
 
 " https://gist.github.com/cormacrelf/d0bee254f5630b0e93c3
 function! WordCount()
@@ -43,6 +44,14 @@ function! WordCount()
 		return b:wordcount
 	endif
 endfunction
+
+" https://github.com/benknoble/vim-auto-origami
+augroup autofoldcolumn
+	au!
+
+	" Or whatever autocmd-events you want
+	au CursorHold,BufWinEnter,WinEnter * AutoOrigamiFoldColumn
+augroup END
 
 " Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
