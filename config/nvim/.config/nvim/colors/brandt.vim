@@ -18,4 +18,6 @@ hi CocInfoHighlight	ctermfg=NONE	ctermbg=124
 hi CocHintHighlight	ctermfg=NONE	ctermbg=124
 hi CocCodeLens	ctermfg=9	ctermbg=232
 
+hi CursorLine	cterm=NONE
+
 hi clear FoldColumn
