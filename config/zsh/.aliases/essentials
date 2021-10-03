@@ -3,6 +3,8 @@ alias ll='ls -la'
 alias lg='ls -la | grep -iF'
 alias lt='ls -latr'
 
+alias hib='systemctl hibernate'
+
 function cl() {
 	clear;
 	cd $1;
