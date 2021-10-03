@@ -70,6 +70,8 @@ let g:lightline = {
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
+
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 let g:coc_global_extensions = [ 'coc-eslint', 'coc-tslint', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-vetur' ]
 " use :CocInstall
@@ -119,6 +121,7 @@ nmap <C-p> :Files<CR>
 nmap <C-l> :e#<CR>
 nmap <C-f> :noh<CR>
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-m> <Plug>MarkdownPreviewToggle
 nmap <C-k> {
 nmap <C-j> }
 " write shada-file (deleting markers)
