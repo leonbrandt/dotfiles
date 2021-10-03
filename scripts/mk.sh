@@ -4,8 +4,11 @@
 # Usage: mk <days to add/subsctract>
 # Mainly used for organizing my study related files
 
-# Use the following alias to cd automatically into created directories
-# alias mk='export X_TMP_DIR=$(\mk) && cd $X_TMP_DIR'
+# Use the following function to cd automatically into created directories
+# function mk() {
+#	export X_TMP_DIR=$(sh \mk "$@")
+#	cd $X_TMP_DIR
+# }
 
 trim() {
 	# https://stackoverflow.com/a/3352015/6124544

@@ -52,4 +52,7 @@ function explain() {
 	command -v $1;
 }
 
-alias mk='export X_TMP_DIR=$(\mk) && cd $X_TMP_DIR'
+function mk() {
+	export X_TMP_DIR=$(sh \mk "$@")
+	cd $X_TMP_DIR
+}
