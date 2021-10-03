@@ -51,3 +51,5 @@ function explain() {
 	which $1;
 	command -v $1;
 }
+
+alias mk='export X_TMP_DIR=$(\mk) && cd $X_TMP_DIR'
