@@ -3,6 +3,8 @@ alias ll='ls -la'
 alias lg='ls -la | grep -iF'
 alias lt='ls -latr'
 
+alias x='xdg-open > /dev/null 2>&1'
+
 alias hib='systemctl hibernate'
 
 function cl() {
