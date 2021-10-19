@@ -201,6 +201,10 @@ smart_gaps on
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
+bindsym XF86AudioNext exec spotify-next
+bindsym XF86AudioPrev exec spotify-prev
+bindsym XF86AudioPlay exec spotify-playpause
+
 bindsym $mod+w mode "workspace"
 
 mode "workspace" {
