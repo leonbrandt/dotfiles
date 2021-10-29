@@ -3,7 +3,16 @@ alias gs='git status'
 alias ga='git add'
 alias gaa='git add .'
 alias grs='git restore --staged'
-alias gc='git commit'
+function gc() {
+	T=$(mktemp /tmp/git.XXX) # create temp-file
+	git log -n 10 --oneline > $T # store git log
+	echo "" >> $T # append newline after last line (readability)
+	sed -i -e 's/^/# /' $T # prefix every line with hash-sign (to be interpreted as comment from git commit)
+	sed -i '1s/^/\n/' $T # append newline before first line (space for commit-message)
+	truncate -s -1 $T # remove last \n
+	git commit -t $T # commit with template
+	rm $T # delete temp-file
+}
 alias gp='git push'
 alias gl='git log --oneline'
 alias gskip='git update-index --skip-worktree'
