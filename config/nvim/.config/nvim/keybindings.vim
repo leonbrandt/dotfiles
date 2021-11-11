@@ -9,8 +9,8 @@ nmap <C-l> :e#<CR>
 nmap <C-f> :noh<CR>
 nmap <C-j> }
 nmap <C-k> {
-imap <C-j> <Down>
-imap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 nmap <C-m> <Plug>MarkdownPreviewToggle
 " write shada-file (deleting markers)
 nmap <Leader>s :wshada!<CR>
