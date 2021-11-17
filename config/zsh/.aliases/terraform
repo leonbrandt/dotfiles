@@ -1,5 +1,6 @@
 alias t='terraform'
 alias tfv='terraform fmt && terraform validate'
+alias tg='terraform graph | dot -Tsvg > /tmp/tf.svg && chrome /tmp/tf.svg'
 alias ti='terraform init'
 alias tp='terraform plan'
 alias ta='terraform apply'
