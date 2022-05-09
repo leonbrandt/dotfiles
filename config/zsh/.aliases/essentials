@@ -23,7 +23,9 @@ alias dup='duplicate'
 
 alias eg='env | grep -iF'
 alias pg='pacman -Q | grep -iF'
-alias hg='history | grep -iF'
+function hg() { # https://superuser.com/a/1061539
+	fc -lim "*$@*" 1
+}
 
 alias ytdl='youtube-dl'
 alias ytdlmp3='youtube-dl --prefer-ffmpeg --extract-audio --audio-format mp3'
