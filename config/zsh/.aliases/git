@@ -1,5 +1,6 @@
 alias g='git'
 alias gs='git status'
+alias gss='git status -uall'
 alias ga='git add'
 alias gaa='git add .'
 alias grs='git restore --staged'
