@@ -62,3 +62,8 @@ function mk() {
 	export X_TMP_DIR=$(sh \mk "$@")
 	cd $X_TMP_DIR
 }
+
+function mkcd() {
+	mkdir $1
+	cd $1
+}
