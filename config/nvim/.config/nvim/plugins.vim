@@ -41,7 +41,7 @@ let g:lightline = {
 
 let g:suda_smart_edit = 1
 
-let g:coc_global_extensions = [ 'coc-eslint', 'coc-tslint', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-vetur' ]
+let g:coc_global_extensions = [ 'coc-eslint', 'coc-tsserver', 'coc-json', 'coc-yaml' ]
 " use :CocInstall
 
 let g:snipMate = { 'snippet_version' : 1 }
