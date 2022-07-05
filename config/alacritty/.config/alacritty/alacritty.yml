@@ -1,0 +1,56 @@
+font:
+  normal:
+    family: "DejaVu Sans Mono"
+    style: Regular
+
+  bold:
+    family: "DejaVu Sans Mono"
+    style: Bold
+
+  italic:
+    family: "DejaVu Sans Mono"
+    style: Italic
+
+  bold_italic:
+    family: "DejaVu Sans Mono"
+    style: Bold Italic
+
+  size: 11
+
+  offset:
+    x: -1
+    y: 0
+
+window:
+  padding:
+   x: 10
+   y: 10
+
+colors:
+  primary:
+    background: '#222229'
+    foreground: '#FFFFFF'
+  cursor:
+    text: '#F81CE5'
+    cursor: '#33FF00'
+
+  normal:
+    black:   '#000000'
+    red:     '#FE0100'
+    # green:   '#1DC121'
+    green:   '#67F86F'
+    yellow:  '#C7C329'
+    blue:    '#1A80FF'
+    magenta: '#CC00FF'
+    cyan:    '#00FFFF'
+    white:   '#D0D0D0'
+
+  bright:
+    black:   '#808080'
+    red:     '#FE0100'
+    green:   '#67F86F'
+    yellow:  '#FFFA72'
+    blue:    '#1A80FF'
+    magenta: '#FD7CFC'
+    cyan:    '#00FFFF'
+    white:   '#FFFFFF'
