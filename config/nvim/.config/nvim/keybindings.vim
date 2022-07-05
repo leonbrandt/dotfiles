@@ -37,6 +37,7 @@ nmap <Leader>M ]'
 " jump to start of prev line containting a mark
 nmap <Leader>m ['
 nmap <Leader>mf '
+nmap <Leader>1 'm
 
 " COC
 
