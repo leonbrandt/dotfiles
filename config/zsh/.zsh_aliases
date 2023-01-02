@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ALIASES_DIRECTORY="${ALIASES_DIRECTORY:-.aliases/}"
+ALIASES_DIRECTORY="${ALIASES_DIRECTORY:-/home/leon/.aliases/}"
 
 pushd $ALIASES_DIRECTORY > /dev/null
 for alias_file in *; do
