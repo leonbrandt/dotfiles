@@ -28,6 +28,7 @@ set foldlevel=2
 " FileType-Specific
 
 autocmd FileType yaml set et tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType tf set et tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType tf setlocal commentstring=//\ %s
+autocmd FileType terraform set et tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType terraform setlocal commentstring=//\ %s
 autocmd FileType typescript setlocal commentstring=//\ %s
+autocmd FileType rust set noet tabstop=4 softtabstop=4 shiftwidth=4
