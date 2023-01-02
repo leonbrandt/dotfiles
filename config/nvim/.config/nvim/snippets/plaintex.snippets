@@ -8,8 +8,26 @@ snippet center "center"
 		${0:${VISUAL}}
 	\\end{center}
 
+snippet bf "textbf"
+	\\textbf{$1}
+
+snippet tt "texttt"
+	\\texttt{$1}
+
+snippet it "textit"
+	\\textit{$1}
+
 snippet sec "section"
 	\\section{$1}
+
+snippet subsec "subsection"
+	\\subsection{$1}
+
+snippet subsubsec "subsubsection"
+	\\subsubsection{$1}
+
+snippet par "paragraph"
+	\\paragraph{$1}
 
 snippet itemize "itemize"
 	\\begin{itemize}
@@ -19,13 +37,49 @@ snippet itemize "itemize"
 snippet i "item"
 	\\item
 
+snippet ni "noindent"
+	\\noindent
+
+snippet bb "bigbreak"
+	\\bigbreak
+
+snippet abs "paragraph"
+	\\bigbreak
+	\\noindent
+
+snippet fig "figure"
+	\\begin{figure}[!h]
+		\\centering
+		\\includegraphics[width=1\\textwidth]{$1}
+		\\caption{$2}
+		\\label{fig:$3}
+	\\end{figure}
+
 # CITING
 
 snippet cite "cite"
-	\\cite{$0}
+	\\cite{$1}
 
 snippet tcite "textcite"
-	\\textcite{$0}
+	\\textcite{$1}
+
+snippet icite "inlinecite"
+	\\citeauthor{$1} (\\citeyear{$1})
+
+snippet citea "citeauthor"
+	\\citeauthor{$1}
+
+snippet citey "citeyear"
+	\\citeyear{$1}
+
+snippet lab "label"
+	\\label{$1}
+
+snippet ref "ref"
+	\\ref{$1}
+
+snippet fref "fref"
+	\\ref{$1} \\nameref{$1}
 
 # BEAMER
 
