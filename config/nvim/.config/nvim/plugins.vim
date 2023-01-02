@@ -34,14 +34,13 @@ let g:lightline = {
 	\		[ 'wordcount' ] ]
 	\ },
 	\ 'component_function': {
-	\		'gitbranch': 'FugitiveHead',
-	\	'wordcount': 'WordCount'
+	\		'gitbranch': 'FugitiveHead'
 	\ }
 	\ }
 
 let g:suda_smart_edit = 1
 
-let g:coc_global_extensions = [ 'coc-eslint', 'coc-tsserver', 'coc-json', 'coc-yaml' ]
+let g:coc_global_extensions = [ 'coc-eslint', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-rust-analyzer' ]
 " use :CocInstall
 
 let g:snipMate = { 'snippet_version' : 1 }
