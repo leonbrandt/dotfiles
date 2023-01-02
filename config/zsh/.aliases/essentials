@@ -3,7 +3,7 @@ alias ll='ls -la'
 alias lg='ls -la | grep -iF'
 alias lt='ls -latr'
 
-alias x='xdg-open > /dev/null 2>&1'
+alias x='detach xdg-open > /dev/null 2>&1'
 
 alias hib='systemctl hibernate'
 
@@ -18,7 +18,7 @@ alias longdirsize='du -lh .'
 alias ds='dirsize'
 alias lds='longdirsize'
 
-alias duplicate='export INIT_DIR=$(pwd) && alacritty'
+alias duplicate='export INIT_DIR=$(pwd) && detach alacritty'
 alias dup='duplicate'
 
 alias eg='env | grep -iF'
@@ -63,7 +63,14 @@ function mk() {
 	cd $X_TMP_DIR
 }
 
+function mkbook() {
+	export X_TMP_DIR=$(sh \mkbook "$@")
+	cd $X_TMP_DIR
+}
+
 function mkcd() {
 	mkdir $1
 	cd $1
 }
+
+alias a='scrcpy'
