@@ -8,9 +8,10 @@ configuration {
 	sidebar-mode: false;
 	separator-style: "solid";
 	hide-scrollbar: true;
-	theme: "/usr/share/rofi/themes/oxide.rasi";
 	color-normal: "#272827, #657b83, #272827, #272827, #13bf9d";
 	color-urgent: "#272827, #657b83, #272827, #272827, #13bf9d";
 	color-active: "#272827, #657b83, #272827, #272827, #13bf9d";
 	color-window: "#272827, #13bf9d, #13bf9d";
 }
+
+@theme "/usr/share/rofi/themes/Monokai.rasi"
