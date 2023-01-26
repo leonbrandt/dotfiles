@@ -7,3 +7,6 @@
 	smudge = git-lfs smudge -- %f
 [pull]
 	rebase = true
+[user]
+	email = mail@leonbrandt.com
+	name = Leon Brandt
