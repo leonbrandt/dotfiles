@@ -42,6 +42,9 @@ nmap <Leader>1 'm
 " COC
 
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD <Plug>(coc-declaration)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " DISABLE KEYS
 
@@ -57,3 +60,16 @@ imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Home> <Nop>
 imap <End> <Nop>
+
+
+
+inoremap <silent><expr> <C-j>
+	\ coc#pum#visible() ? coc#pum#next(1) :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
+inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
