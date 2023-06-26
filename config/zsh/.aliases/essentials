@@ -27,6 +27,11 @@ function hg() { # https://superuser.com/a/1061539
 	fc -lim "*$@*" 1
 }
 
+function sessionlog() {
+	N=${1:-20};
+	last | grep boot | tac | tail -n $N;
+}
+
 alias ytdl='youtube-dl'
 alias ytdlmp3='youtube-dl --prefer-ffmpeg --extract-audio --audio-format mp3'
 

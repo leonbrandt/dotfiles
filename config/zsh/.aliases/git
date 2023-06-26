@@ -14,7 +14,15 @@ function gc() {
 	git commit -t $T # commit with template
 	rm $T # delete temp-file
 }
+alias gca='git commit --amend'
+alias gcar='git commit --amend --reset-author'
 alias gp='git push'
 alias gl='git log --oneline'
 alias gskip='git update-index --skip-worktree'
 alias gunskip='git update-index --no-skip-worktree'
+alias grb='git rebase'
+alias grbc='git rebase --continue'
+function grbin() {
+	N=${1:-1};
+	git rebase -i HEAD~${N};
+}
