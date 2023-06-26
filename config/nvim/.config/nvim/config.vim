@@ -31,4 +31,7 @@ autocmd FileType yaml set et tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType terraform set et tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType terraform setlocal commentstring=//\ %s
 autocmd FileType typescript setlocal commentstring=//\ %s
+autocmd FileType javascript setlocal commentstring=//\ %s
+autocmd FileType typescript set noet tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType javascript set noet tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType rust set noet tabstop=4 softtabstop=4 shiftwidth=4
