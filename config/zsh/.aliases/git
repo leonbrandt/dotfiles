@@ -26,3 +26,10 @@ function grbin() {
 	N=${1:-1};
 	git rebase -i HEAD~${N};
 }
+alias gst='git stash'
+alias gstl='git stash list'
+alias gstpu='git stash push'
+alias gstpo='git stash pop'
+alias gsta='git stash apply'
+alias gsts='git stash show'
+alias gstc='git stash clear'
