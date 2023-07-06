@@ -6,6 +6,7 @@ alias lt='ls -latr'
 alias x='detach xdg-open > /dev/null 2>&1'
 
 alias hib='systemctl hibernate'
+alias lock='i3lock -c 222222'
 
 function cl() {
 	clear;
